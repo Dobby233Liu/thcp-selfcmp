@@ -5,7 +5,7 @@ max_jobs: 2
 image: Visual Studio 2013
 init: 
   - git clone --recursive https://github.com/thpatch/thcrap.git C:\projects\thcrap
-platform: x86
+# platform: x86
 configuration: Debug
 build:
   project: C:\projects\thcrap\thcrap.sln
