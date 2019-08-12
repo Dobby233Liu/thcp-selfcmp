@@ -4,10 +4,14 @@ skip_branch_with_pr: true
 max_jobs: 2
 image: Visual Studio 2013
 init: 
-  - |
-    git clone --recursive https://github.com/thpatch/thcrap.git ..\crap
-    cd ..\crap
-    msbuild thcrap.sln /m /p:Configuration=Debug
-    7z a -tzip .\thcrap.zip .\bin\*
+  - git clone --recursive https://github.com/thpatch/thcrap.git C:\projects\thcrap
+platform: x86
+configuration: Debug
+build:
+  project: C:\projects\thcrap\thcrap.sln
+  verbosity: minimal
+after_build:
+  - cd C:\projects\crap
+  - 7z a -tzip .\thcrap.zip .\bin\*
 artifacts:
-  - path: ..\crap\thcrap.zip
+  - path: C:\projects\thcrap\thcrap.zip
