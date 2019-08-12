@@ -10,4 +10,4 @@ init:
     msbuild thcrap.sln /m /p:Configuration=Debug
     7z a -tzip .\thcrap.zip .\bin\*
 artifacts:
-  - path: thcrap\thcrap.zip
+  - path: ..\crap\thcrap.zip
