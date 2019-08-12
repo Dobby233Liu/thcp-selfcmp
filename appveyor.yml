@@ -7,10 +7,7 @@ init:
   - |
     git clone --recursive https://github.com/thpatch/thcrap.git
     cd thcrap
-    'C:\Program Files (x86)\Windows Kits\8.1\bin\x64\makecert' -n "CN=AppVeyor CI,E=ci@appveyor.com" -$ individual -a sha256 -len 4096 -r -cy authority -sky signature -pe -sv cert.pvk cert.cer
-    pvk2pfx -pvk cert.pvk -spc cert.cer -pfx cert.pfx
     msbuild thcrap.sln /m /p:Configuration=Debug
-    openssl rsa -inform pvk -in cert.pvk -outform pem -out cert.pem
-    python release_sign.py -k cert.pem thcrap.zip
+    7z a -tzip .\thcrap.zip .\bin\*
 artifacts:
   - path: thcrap\thcrap.zip
