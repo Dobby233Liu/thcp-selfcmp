@@ -5,8 +5,8 @@ max_jobs: 2
 image: Visual Studio 2013
 init: 
   - |
-    git clone --recursive https://github.com/thpatch/thcrap.git
-    cd thcrap
+    git clone --recursive https://github.com/thpatch/thcrap.git ..\crap
+    cd ..\crap
     msbuild thcrap.sln /m /p:Configuration=Debug
     7z a -tzip .\thcrap.zip .\bin\*
 artifacts:
