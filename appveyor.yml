@@ -7,14 +7,12 @@ init:
   - git clone --recursive https://github.com/thpatch/thcrap.git C:\projects\thcrap
 # platform: x86
 configuration: Release
-before_build:
-  - cd C:\projects\thcrap
-  - msbuild C:\projects\thcrap\libs\libpng.vcxproj
 build:
+  parallel: true
   project: C:\projects\thcrap\thcrap.sln
   verbosity: minimal
 after_build:
-  - cd C:\projects\crap
+  - cd C:\projects\thcrap
   - 7z a -tzip .\thcrap.zip .\bin\*
 artifacts:
   - path: C:\projects\thcrap\thcrap.zip
