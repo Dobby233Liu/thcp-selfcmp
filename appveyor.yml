@@ -8,7 +8,7 @@ init:
 # platform: x86
 configuration: Release
 before_build:
-  - msbuild C:\projects\thcrap\libpng.vcxproj
+  - msbuild C:\projects\thcrap\libs\libpng.vcxproj
 build:
   project: C:\projects\thcrap\thcrap.sln
   verbosity: minimal
