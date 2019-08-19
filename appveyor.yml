@@ -8,13 +8,12 @@ init:
 # platform: x86
 configuration: Release
 before_build: 
-  - C:\"Program Files (x86)"\"Microsoft Visual Studio"\2017\Community\VC\Auxiliary\Build\vcvarsall.bat x64
   - cd C:\projects\thcrap
 # - makecert -n "CN=AppVeyor CI,E=ci@appveyor.com" -$ individual -a sha256 -len 4096 -r -cy authority -sky signature -pe -sv cert.pvk cert.cer
 # - pvk2pfx -pvk cert.pvk -spc cert.cer -pfx cert.pfx
 install:
   - cd C:\projects\thcrap
-  - msbuild /m /p:Configuration=Release
+  - msbuild /m /p:Configuration=Release;Platform=x64
 after_build:
   - cd C:\projects\thcrap
   - 7z a -tzip .\thcrap.zip .\bin\*
