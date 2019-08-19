@@ -13,7 +13,7 @@ before_build:
 # - pvk2pfx -pvk cert.pvk -spc cert.cer -pfx cert.pfx
 install:
   - cd C:\projects\thcrap
-  - msbuild /m /p:Configuration=Release;Platform=x64
+  - msbuild /m
 after_build:
   - cd C:\projects\thcrap
   - 7z a -tzip .\thcrap.zip .\bin\*
