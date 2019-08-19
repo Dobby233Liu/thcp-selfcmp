@@ -13,7 +13,7 @@ before_build:
 # - pvk2pfx -pvk cert.pvk -spc cert.cer -pfx cert.pfx
 build_script:
   - cd C:\projects\thcrap
-  - msbuild /m
+  - msbuild /m /p:Configuration=Release
 after_build:
   - cd C:\projects\thcrap
   - 7z a -tzip .\thcrap.zip .\bin\*
