@@ -5,7 +5,7 @@ max_jobs: 2
 image: Visual Studio 2017
 init: 
   - git clone --recursive https://github.com/thpatch/thcrap.git C:\projects\thcrap
-  - git clone https://github.com/3gstudent/signtools.git --depth 1 C:\projects\signtools# Windows SDK 7.0 requirements
+  - git clone https://github.com/3gstudent/signtools.git --depth 1 C:\projects\signtools
 # platform: x86
 configuration: Release
 before_build: 
