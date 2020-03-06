@@ -10,8 +10,9 @@ init:
 configuration: Release
 before_build: 
   - cd C:\projects\thcrap
-  - openssl genrsa -out pvtPrivate.key 2048
+# - openssl genrsa -out pvtPrivate.key 2048
   - ..\signtools\makecert -n "CN=AppVeyor CI,E=ci@appveyor.com" -$ individual -a sha256 -len 4096 -r -cy authority -sky signature -pe -sk . cert.cer
+  - dir
   - ..\signtools\pvk2pfx -pvk cert.pvk -spc cert.cer -pfx cert.pfx
 build_script:
   - cd C:\projects\thcrap
