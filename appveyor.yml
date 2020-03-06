@@ -9,8 +9,8 @@ init:
 configuration: Release
 before_build: 
   - cd C:\projects\thcrap
-# - makecert -n "CN=AppVeyor CI,E=ci@appveyor.com" -$ individual -a sha256 -len 4096 -r -cy authority -sky signature -pe -sv cert.pvk cert.cer
-# - pvk2pfx -pvk cert.pvk -spc cert.cer -pfx cert.pfx
+  - makecert -n "CN=AppVeyor CI,E=ci@appveyor.com" -$ individual -a sha256 -len 4096 -r -cy authority -sky signature -pe -sv cert.pvk cert.cer
+  - pvk2pfx -pvk cert.pvk -spc cert.cer -pfx cert.pfx
 build_script:
   - cd C:\projects\thcrap
   - msbuild /m /p:Configuration=Release
@@ -18,4 +18,4 @@ after_build:
   - cd C:\projects\thcrap
   - 7z a -tzip .\thcrap.zip .\bin\*
 artifacts:
-  - path: C:\projects\thcrap\thcrap.zip
+  - path: ..\thcrap.zip
