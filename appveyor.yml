@@ -17,6 +17,6 @@ build_script:
   - msbuild /m /p:Configuration=Release
 after_build:
   - cd C:\projects\thcrap
-  - 7z a -tzip .\thcrap.zip .\bin\*
+  - 7z a -tzip ..\thcp-selfcmp\thcrap.zip .\bin\*
 artifacts:
-  - path: ..\thcrap.zip
+  - path: .\thcrap.zip
